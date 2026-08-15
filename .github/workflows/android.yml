@@ -24,6 +24,9 @@ jobs:
         gradle-version: '8.5'
         cache-disabled: true
 
+    - name: Set Android SDK Location
+      run: echo "sdk.dir=$ANDROID_HOME" > local.properties
+
     - name: Accept SDK Licenses
       run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
